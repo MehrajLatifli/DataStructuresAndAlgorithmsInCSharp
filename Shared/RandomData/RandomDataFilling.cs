@@ -17,9 +17,9 @@ namespace RandomData
             List<int> list = new List<int>();
 
             Random random = new Random();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
-                int randomNumber = random.Next(1, 10001);
+                int randomNumber = random.Next(1, 10000);
                 list.Add(randomNumber);
             }
 

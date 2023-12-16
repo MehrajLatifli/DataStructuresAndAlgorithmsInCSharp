@@ -62,6 +62,7 @@ namespace DataStructuresAndAlgorithms
                                 }
 
 
+
                                 Console.Write("\n Enter the ID to search: ");
                                 if (int.TryParse(Console.ReadLine(), out int searchId))
                                 {
@@ -104,11 +105,19 @@ namespace DataStructuresAndAlgorithms
                                 if (int.TryParse(Console.ReadLine(), out int searchId))
                                 {
 
-                                    int binarySearchIndex = BinarySearchAlgorithm.Search(items, searchId);
+                                    var binarylist = new List<Item>();
+
+                                    binarylist.AddRange(items);
+
+
+                                    binarylist.Sort((item1, item2) => item1.Id.CompareTo(item2.Id));
+
+                                    int binarySearchIndex = BinarySearchAlgorithm.Search(binarylist, searchId);
+
                                     if (binarySearchIndex != -1)
                                     {
-                                        Console.WriteLine($"\n Item with ID {searchId} found at index {binarySearchIndex}.");
-                                        Console.WriteLine($" Id: {items[binarySearchIndex].Id}, Name: {items[binarySearchIndex].Name}");
+                                        Console.WriteLine($"\n Item with ID {searchId} found at index {items.IndexOf(items.Where(i=>i.Id==searchId).FirstOrDefault())}.");
+                                        Console.WriteLine($" Id: {binarylist[binarySearchIndex].Id}, Name: {binarylist[binarySearchIndex].Name}");
                                     }
                                     else
                                     {

@@ -1,9 +1,6 @@
 ﻿using Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BinarySearch
 {
@@ -16,6 +13,7 @@ namespace BinarySearch
 
         private static int BinarySearchRecursive(List<Item> items, int target, int left, int right)
         {
+
             if (left <= right)
             {
                 int middle = left + (right - left) / 2;
@@ -36,6 +34,5 @@ namespace BinarySearch
 
             return -1;
         }
-
     }
 }
