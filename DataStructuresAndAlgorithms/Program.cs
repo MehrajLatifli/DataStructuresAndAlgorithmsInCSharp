@@ -11,7 +11,7 @@ namespace DataStructuresAndAlgorithms
     public class Program
     {
 
-       static void Menu(List<Item> items, Graph<Item> itemGraph)
+        static void Menu(List<Item> items, Graph<Item> itemGraph)
         {
             while (true)
             {
@@ -116,7 +116,7 @@ namespace DataStructuresAndAlgorithms
 
                                     if (binarySearchIndex != -1)
                                     {
-                                        Console.WriteLine($"\n Item with ID {searchId} found at index {items.IndexOf(items.Where(i=>i.Id==searchId).FirstOrDefault())}.");
+                                        Console.WriteLine($"\n Item with ID {searchId} found at index {items.IndexOf(items.Where(i => i.Id == searchId).FirstOrDefault())}.");
                                         Console.WriteLine($" Id: {binarylist[binarySearchIndex].Id}, Name: {binarylist[binarySearchIndex].Name}");
                                     }
                                     else
@@ -187,7 +187,7 @@ namespace DataStructuresAndAlgorithms
                                             }
                                             break;
 
-                                        case 3: 
+                                        case 3:
                                             Console.Write(" Enter Item Id to remove: ");
                                             int removeItemId = int.Parse(Console.ReadLine());
 
