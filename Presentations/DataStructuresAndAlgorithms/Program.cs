@@ -269,14 +269,13 @@ namespace DataStructuresAndAlgorithms
 
 
         }
-        static void Main(string[] args)
+
+        static async Task Main(string[] args)
         {
             List<Item> items = new List<Item>();
-
             Graph<Item> itemGraph = new Graph<Item>();
 
-            Menu(items, itemGraph);
-
+            await Task.Run(() => Menu(items, itemGraph));
         }
     }
 }
