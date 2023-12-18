@@ -9,8 +9,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Algorithms\Custom Abstract data types algorithms\Graph\Graph.csproj" />
+    <ProjectReference Include="..\..\Algorithms\Custom Abstract data types algorithms\Queue\Queue.csproj" />
+    <ProjectReference Include="..\..\Algorithms\Custom Abstract data types algorithms\Stack\Stack.csproj" />
     <ProjectReference Include="..\..\Algorithms\Searching algorithms\BinarySearch\BinarySearch.csproj" />
     <ProjectReference Include="..\..\Algorithms\Searching algorithms\LinearSearch\LinearSearch.csproj" />
+    <ProjectReference Include="..\..\Algorithms\Sorting algorithms\BubbleSort\BubbleSort.csproj" />
+    <ProjectReference Include="..\..\Algorithms\Sorting algorithms\InsertionSort\InsertionSort.csproj" />
+    <ProjectReference Include="..\..\Algorithms\Sorting algorithms\MergeSort\MergeSort.csproj" />
+    <ProjectReference Include="..\..\Algorithms\Sorting algorithms\QuickSort\QuickSort.csproj" />
+    <ProjectReference Include="..\..\Algorithms\Sorting algorithms\SelectionSort\SelectionSort.csproj" />
     <ProjectReference Include="..\..\Shares\Data\Data.csproj" />
     <ProjectReference Include="..\..\Shares\RandomData\RandomData.csproj" />
   </ItemGroup>

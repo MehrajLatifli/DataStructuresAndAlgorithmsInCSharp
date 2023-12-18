@@ -1,8 +1,14 @@
 ﻿using BinarySearch;
+using BubbleSort;
 using Data;
 using Graph;
+using InsertionSort;
 using LinearSearch;
+using MergeSort;
+using QuickSort;
 using RandomData;
+using SelectionSort;
+using Stack;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,16 +17,23 @@ namespace DataStructuresAndAlgorithms
     public class Program
     {
 
-        static void Menu(List<Item> items, Graph<Item> itemGraph)
+        static async void Menu(List<Item> items, CustomGraph<Item> itemGraph, CustomStack<Item>  customStack, CustomQueue<Item>  customQueue)
         {
             while (true)
             {
                 Console.WriteLine("\n");
-                Console.WriteLine(" 1. Generate Random Items");
-                Console.WriteLine(" 2. Linear Seach");
-                Console.WriteLine(" 3. Binary Search");
-                Console.WriteLine(" 4. Custom Graph");
-                Console.WriteLine(" 0. Exit");
+                Console.WriteLine(" 1.  Generate Random Items");
+                Console.WriteLine(" 2.  Linear Seach");
+                Console.WriteLine(" 3.  Binary Search");
+                Console.WriteLine(" 4.  Bubble Sort");
+                Console.WriteLine(" 5.  Insertion Sort ");
+                Console.WriteLine(" 6.  Selection Sort ");
+                Console.WriteLine(" 7.  Merge Sort ");
+                Console.WriteLine(" 8.  Quick Sort ");
+                Console.WriteLine(" 9.  Custom Graph");
+                Console.WriteLine(" 10. Custom Srack");
+                Console.WriteLine(" 11. Custom Queue");
+                Console.WriteLine(" 0.  Exit");
                 Console.Write("\n Enter your choice: ");
 
                 if (int.TryParse(Console.ReadLine(), out int choice))
@@ -135,8 +148,171 @@ namespace DataStructuresAndAlgorithms
                             }
                             break;
 
-
                         case 4:
+
+              
+
+                            if (items.Count() > 0)
+                            {
+
+
+                                for (int i = 0; i < items.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+                                Console.WriteLine("\n");
+
+                                var bubbleSortinglist = await BubbleSortAlgorithm.Sorting(items);
+
+                                for (int i = 0; i < bubbleSortinglist.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+                            }
+                            else
+                            {
+                                Console.WriteLine($" Item list is null");
+                            }
+
+                            break;
+
+                        case 5:
+
+                            if (items.Count() > 0)
+                            {
+
+
+                                for (int i = 0; i < items.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+                                Console.WriteLine("\n");
+
+                                var insertionSortinglist = await InsertionSortAlgorithm.Sorting(items);
+
+                                for (int i = 0; i < insertionSortinglist.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+                            }
+                            else
+                            {
+                                Console.WriteLine($" Item list is null");
+                            }
+
+                            break;
+
+                        case 6:
+
+                            if (items.Count() > 0)
+                            {
+
+
+                                for (int i = 0; i < items.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+                                Console.WriteLine("\n");
+
+                                var selectionSortinglist = await SelectionSortAlgorithm.Sorting(items);
+
+                                for (int i = 0; i < selectionSortinglist.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+                            }
+                            else
+                            {
+                                Console.WriteLine($" Item list is null");
+                            }
+
+                            break;
+
+                        case 7:
+
+                            if (items.Count() > 0)
+                            {
+
+
+                                for (int i = 0; i < items.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+                                Console.WriteLine("\n");
+
+                                var mergeSortinglist = await MergeSortAlgorithm.Sorting(items);
+
+                                for (int i = 0; i < mergeSortinglist.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+
+                            }
+                            else
+                            {
+                                Console.WriteLine($" Item list is null");
+                            }
+
+                            break;
+
+                        case 8:
+
+                            if (items.Count() > 0)
+                            {
+
+
+                                for (int i = 0; i < items.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+                                Console.WriteLine("\n");
+
+                                var quickSortinglist = await QuickSortAlgorithm.Sorting(items);
+
+                                for (int i = 0; i < quickSortinglist.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+
+                            }
+                            else
+                            {
+                                Console.WriteLine($" Item list is null");
+                            }
+
+                            break;
+
+                        case 9:
 
                             while (true)
                             {
@@ -235,7 +411,141 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.Clear();
 
-                                            Menu(items, itemGraph);
+                                            Menu(items, itemGraph, customStack, customQueue);
+                                            break;
+                                    }
+                                }
+
+                                Console.WriteLine("\n Press Enter to continue...");
+                                Console.ReadKey();
+                                Console.Clear();
+
+
+                            }
+
+                        case 10:
+
+                            while (true)
+                            {
+                                Console.WriteLine("\n");
+                                Console.WriteLine(" 1. Push");
+                                Console.WriteLine(" 2. Pop");
+                                Console.WriteLine(" 3. Top element");
+                                Console.WriteLine(" 4. Print Stack");
+                                Console.WriteLine(" 5. <- ");
+                                Console.Write("\n Enter your choice: ");
+
+                                if (int.TryParse(Console.ReadLine(), out int choice3))
+                                {
+                                    switch (choice3)
+                                    {
+                                        case 1:
+
+                                            Console.Write(" Enter Item Id: ");
+                                            int itemId = int.Parse(Console.ReadLine());
+
+                                            Console.Write(" Enter Item Name: ");
+                                            string itemName = Console.ReadLine();
+
+                                            Item newItem = new Item { Id = itemId, Name = itemName };
+                                            customStack.Push(newItem);
+
+                                            break;
+
+
+                                        case 2:
+
+                                            Item removedItem = customStack.Pop();
+
+                                            Console.WriteLine($" {removedItem} is removed from stack");
+
+                                            break;
+
+
+                                        case 3:
+
+                                            Console.WriteLine($" Top item is {customStack.TopElement()}");
+
+                                            break;
+
+                                        case 4:
+                                            Console.WriteLine("\n");
+                                            customStack.DisplayAll();
+
+                                            break;
+
+                                        case 5:
+
+                                            Console.Clear();
+
+                                            Menu(items, itemGraph, customStack, customQueue);
+                                            break;
+                                    }
+                                }
+
+                                Console.WriteLine("\n Press Enter to continue...");
+                                Console.ReadKey();
+                                Console.Clear();
+
+
+                            }
+
+                        case 11:
+
+                            while (true)
+                            {
+                                Console.WriteLine("\n");
+                                Console.WriteLine(" 1. Enqueue");
+                                Console.WriteLine(" 2. Dequeue");
+                                Console.WriteLine(" 3. Peek");
+                                Console.WriteLine(" 4. Print Queue");
+                                Console.WriteLine(" 5. <- ");
+                                Console.Write("\n Enter your choice: ");
+
+                                if (int.TryParse(Console.ReadLine(), out int choice3))
+                                {
+                                    switch (choice3)
+                                    {
+                                        case 1:
+
+                                            Console.Write(" Enter Item Id: ");
+                                            int itemId = int.Parse(Console.ReadLine());
+
+                                            Console.Write(" Enter Item Name: ");
+                                            string itemName = Console.ReadLine();
+
+                                            Item newItem = new Item { Id = itemId, Name = itemName };
+                                            customQueue.Enqueue(newItem);
+
+                                            break;
+
+
+                                        case 2:
+
+                                            Item removedItem = customQueue.Dequeue();
+
+                                            Console.WriteLine($" {removedItem} is removed from queue");
+
+                                            break;
+
+
+                                        case 3:
+
+                                            Console.WriteLine($" Top item is {customQueue.Peek()}");
+
+                                            break;
+
+                                        case 4:
+                                            Console.WriteLine("\n");
+                                            customQueue.DisplayAllItems();
+
+                                            break;
+
+                                        case 5:
+
+                                            Console.Clear();
+
+                                            Menu(items, itemGraph, customStack, customQueue);
                                             break;
                                     }
                                 }
@@ -273,9 +583,11 @@ namespace DataStructuresAndAlgorithms
         static async Task Main(string[] args)
         {
             List<Item> items = new List<Item>();
-            Graph<Item> itemGraph = new Graph<Item>();
+            CustomGraph<Item> itemGraph = new CustomGraph<Item>();
+            CustomStack<Item> customStack = new CustomStack<Item>();
+            CustomQueue<Item> customQueue = new CustomQueue<Item>();
 
-            await Task.Run(() => Menu(items, itemGraph));
+            await Task.Run(() => Menu(items, itemGraph, customStack, customQueue));
         }
     }
 }

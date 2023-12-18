@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Graph
 {
-    public class Graph<T>
+    public class CustomGraph<T>
     {
         private Dictionary<T, List<T>> adjacencyList;
 
-        public Graph()
+        public CustomGraph()
         {
             adjacencyList = new Dictionary<T, List<T>>();
         }
