@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public interface IItem
-    {
-        int Id { get; }
-    }
 
     public class Item : IItem
     {

@@ -27,10 +27,10 @@ namespace Graph
         {
             if (adjacencyList.ContainsKey(vertex))
             {
-                // Remove the vertex from the adjacency list
+   
                 adjacencyList.Remove(vertex);
 
-                // Remove references to the vertex from other lists
+          
                 foreach (var otherVertex in adjacencyList.Keys)
                 {
                     adjacencyList[otherVertex].Remove(vertex);
@@ -51,8 +51,7 @@ namespace Graph
             }
 
             adjacencyList[source].Add(destination);
-            // If the graph is undirected, uncomment the line below:
-            // adjacencyList[destination].Add(source);
+     
         }
 
         public void RemoveEdge(T source, T destination)
@@ -61,8 +60,7 @@ namespace Graph
             {
                 adjacencyList[source].Remove(destination);
 
-                // If the graph is undirected, uncomment the line below:
-                // adjacencyList[destination].Remove(source);
+
             }
         }
 

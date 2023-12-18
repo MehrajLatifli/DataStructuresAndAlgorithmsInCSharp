@@ -10,7 +10,7 @@ namespace Data
 
         public CustomQueue()
         {
-            const int defaultCapacity = 4; // You can adjust the initial capacity as needed
+            const int defaultCapacity = 4;
             queueArray = new T[defaultCapacity];
             front = rear = -1;
         }
@@ -19,7 +19,7 @@ namespace Data
         {
             if (rear == queueArray.Length - 1)
             {
-                // If the array is full, resize it (double its capacity)
+
                 Array.Resize(ref queueArray, queueArray.Length * 2);
             }
 
@@ -48,7 +48,7 @@ namespace Data
 
                 if (front == rear)
                 {
-                    // If there's only one item in the queue, reset front and rear
+                   
                     front = rear = -1;
                 }
                 else
