@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace MergeSort
 {
-    public static class MergeSortAlgorithm
+    public static class MergeSortAlgorithm<T> where T : IItem
     {
-        public static async Task<List<Item>> Sorting(List<Item> items)
+        public static async Task<List<T>> Sorting(List<T> items)
         {
             await Task.Run(() =>
             {
@@ -17,7 +17,7 @@ namespace MergeSort
             return items;
         }
 
-        static void MergeSort(List<Item> items)
+        static void MergeSort(List<T> items)
         {
             int n = items.Count;
 
@@ -25,8 +25,8 @@ namespace MergeSort
             {
                 int mid = n / 2;
 
-                List<Item> left = items.GetRange(0, mid);
-                List<Item> right = items.GetRange(mid, n - mid);
+                List<T> left = items.GetRange(0, mid);
+                List<T> right = items.GetRange(mid, n - mid);
 
                 MergeSort(left);
                 MergeSort(right);
@@ -35,7 +35,7 @@ namespace MergeSort
             }
         }
 
-        static void Merge(List<Item> items, List<Item> left, List<Item> right)
+        static void Merge(List<T> items, List<T> left, List<T> right)
         {
             int i = 0, j = 0, k = 0;
             int leftCount = left.Count;
@@ -43,7 +43,7 @@ namespace MergeSort
 
             while (i < leftCount && j < rightCount)
             {
-                // Compare and merge
+               
                 if (left[i].Id < right[j].Id)
                 {
                     items[k] = left[i];
@@ -57,7 +57,7 @@ namespace MergeSort
                 k++;
             }
 
-            // Copy the remaining elements of left, if any
+          
             while (i < leftCount)
             {
                 items[k] = left[i];
@@ -65,7 +65,7 @@ namespace MergeSort
                 k++;
             }
 
-            // Copy the remaining elements of right, if any
+           
             while (j < rightCount)
             {
                 items[k] = right[j];

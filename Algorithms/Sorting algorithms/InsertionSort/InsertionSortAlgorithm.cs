@@ -4,9 +4,11 @@ using System.Threading.Tasks;
 
 namespace InsertionSort
 {
-    public static class InsertionSortAlgorithm
+
+
+    public static class InsertionSortAlgorithm<T> where T : IItem
     {
-        public static async Task<List<Item>> Sorting(List<Item> items)
+        public static async Task<List<T>> Sorting(List<T> items)
         {
             await Task.Run(() =>
             {
@@ -14,7 +16,7 @@ namespace InsertionSort
 
                 for (int i = 1; i < n; i++)
                 {
-                    Item key = items[i];
+                    T key = items[i];
                     int j = i - 1;
 
                     while (j >= 0 && items[j].Id > key.Id)

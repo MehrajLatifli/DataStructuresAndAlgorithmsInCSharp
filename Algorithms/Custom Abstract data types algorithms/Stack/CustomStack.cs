@@ -53,13 +53,21 @@
         public T Pop()
         {
 
-            T poppedElement = st[top];
+            if (IsEmpty())
+            {
+                Console.WriteLine("\n Stack is empty");
+                return default(T);
+            }
+            else
+            {
+                T poppedElement = st[top];
 
 
-            top--;
+                top--;
 
 
-            return poppedElement;
+                return poppedElement;
+            }
         }
 
         public T TopElement()

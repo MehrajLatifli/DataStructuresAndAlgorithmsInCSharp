@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class Item
+    public interface IItem
+    {
+        int Id { get; }
+    }
+
+    public class Item : IItem
     {
         public Item()
         {

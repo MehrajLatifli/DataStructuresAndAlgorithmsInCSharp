@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace QuickSort
 {
-    public static class QuickSortAlgorithm
+    public static class QuickSortAlgorithm<T> where T : IItem
     {
-        public static async Task<List<Item>> Sorting(List<Item> items)
+        public static async Task<List<T>> Sorting(List<T> items)
         {
             await Task.Run(() =>
             {
@@ -17,7 +17,7 @@ namespace QuickSort
             return items;
         }
 
-        static void QuickSort(List<Item> items, int low, int high)
+        static void QuickSort(List<T> items, int low, int high)
         {
             if (low < high)
             {
@@ -28,9 +28,9 @@ namespace QuickSort
             }
         }
 
-        static int Partition(List<Item> items, int low, int high)
+        static int Partition(List<T> items, int low, int high)
         {
-            Item pivot = items[high];
+            T pivot = items[high];
             int i = low - 1;
 
             for (int j = low; j < high; j++)
@@ -46,9 +46,9 @@ namespace QuickSort
             return i + 1;
         }
 
-        static void Swap(List<Item> items, int i, int j)
+        static void Swap(List<T> items, int i, int j)
         {
-            Item temp = items[i];
+            T temp = items[i];
             items[i] = items[j];
             items[j] = temp;
         }

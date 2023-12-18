@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 namespace BubbleSort
 {
-    public static class BubbleSortAlgorithm
+    public static class BubbleSortAlgorithm<T> where T : IItem
     {
-        public static async Task<List<Item>> Sorting(List<Item> items)
+        public static async Task<List<T>> Sorting(List<T> items)
         {
             await Task.Run(() =>
             {
@@ -18,7 +18,7 @@ namespace BubbleSort
                     {
                         if (items[j].Id > items[j + 1].Id)
                         {
-                            Item temp = items[j];
+                            T temp = items[j];
                             items[j] = items[j + 1];
                             items[j + 1] = temp;
                         }

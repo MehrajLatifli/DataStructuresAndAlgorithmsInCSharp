@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace SelectionSort
 {
-    public static class SelectionSortAlgorithm
+    public static class SelectionSortAlgorithm<T> where T : IItem
     {
-        public static async Task<List<Item>> Sorting(List<Item> items)
+        public static async Task<List<T>> Sorting(List<T> items)
         {
             await Task.Run(() =>
             {
@@ -26,7 +26,7 @@ namespace SelectionSort
                     }
 
                 
-                    Item temp = items[minIndex];
+                    T temp = items[minIndex];
                     items[minIndex] = items[i];
                     items[i] = temp;
                 }

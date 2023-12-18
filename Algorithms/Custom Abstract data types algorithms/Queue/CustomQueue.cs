@@ -35,22 +35,30 @@ namespace Data
         {
             if (IsEmpty)
             {
-                throw new InvalidOperationException("Queue is empty");
-            }
+                //throw new InvalidOperationException("Queue is empty");
 
-            T item = queueArray[front];
-
-            if (front == rear)
-            {
-                // If there's only one item in the queue, reset front and rear
-                front = rear = -1;
+                Console.WriteLine("\n Queue is empty");
+                return default(T);
             }
             else
             {
-                front++;
+
+
+                T item = queueArray[front];
+
+                if (front == rear)
+                {
+                    // If there's only one item in the queue, reset front and rear
+                    front = rear = -1;
+                }
+                else
+                {
+                    front++;
+                }
+
+                return item;
             }
 
-            return item;
         }
 
         public T Peek()
