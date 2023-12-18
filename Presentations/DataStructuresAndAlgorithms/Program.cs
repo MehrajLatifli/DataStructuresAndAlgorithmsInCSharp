@@ -32,10 +32,10 @@ namespace DataStructuresAndAlgorithms
                 Console.WriteLine(" 4.  Ternary Search");
                 Console.WriteLine(" 5.  Jump Search");
                 Console.WriteLine(" 6.  Bubble Sort");
-                Console.WriteLine(" 7.  Insertion Sort ");
-                Console.WriteLine(" 8.  Selection Sort ");
-                Console.WriteLine(" 9.  Merge Sort ");
-                Console.WriteLine(" 10. Quick Sort ");
+                Console.WriteLine(" 7.  Insertion Sort");
+                Console.WriteLine(" 8.  Selection Sort");
+                Console.WriteLine(" 9.  Merge Sort");
+                Console.WriteLine(" 10. Quick Sort");
                 Console.WriteLine(" 11. Custom Graph");
                 Console.WriteLine(" 12. Custom Srack");
                 Console.WriteLine(" 13. Custom Queue");
