@@ -11,7 +11,7 @@ namespace RandomData
     {
 
 
-        public static List<Item> GenerateItems()
+        public static async Task< List<Item>> GenerateItems()
         {
             List<Item> items = new List<Item>();
             List<int> list = new List<int>();

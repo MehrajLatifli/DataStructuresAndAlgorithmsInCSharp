@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace LinearSearch
 {
-    public static class LinearSearchAlgorithm
+    public static class LinearSearchAlgorithm<T> where T : IItem
     {
 
-        public static int Search(List<Item> items, int x)
+        public static async Task<int> Search(List<T> items, int x)
         {
             for (int i = 0; i < items.Count; i++)
             {

@@ -17,7 +17,7 @@ namespace MergeSort
             return items;
         }
 
-        static void MergeSort(List<T> items)
+        static async Task MergeSort(List<T> items)
         {
             int n = items.Count;
 
@@ -28,10 +28,14 @@ namespace MergeSort
                 List<T> left = items.GetRange(0, mid);
                 List<T> right = items.GetRange(mid, n - mid);
 
-                MergeSort(left);
-                MergeSort(right);
+                await Task.WhenAll(
+                    MergeSort(left),
+                    MergeSort(right)
+                );
 
                 Merge(items, left, right);
+
+
             }
         }
 
@@ -43,7 +47,6 @@ namespace MergeSort
 
             while (i < leftCount && j < rightCount)
             {
-               
                 if (left[i].Id < right[j].Id)
                 {
                     items[k] = left[i];
@@ -57,7 +60,6 @@ namespace MergeSort
                 k++;
             }
 
-          
             while (i < leftCount)
             {
                 items[k] = left[i];
@@ -65,7 +67,6 @@ namespace MergeSort
                 k++;
             }
 
-           
             while (j < rightCount)
             {
                 items[k] = right[j];

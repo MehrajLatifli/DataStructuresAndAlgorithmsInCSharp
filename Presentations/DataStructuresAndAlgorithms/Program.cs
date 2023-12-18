@@ -3,6 +3,7 @@ using BubbleSort;
 using Data;
 using Graph;
 using InsertionSort;
+using JumpSearch;
 using LinearSearch;
 using MergeSort;
 using QuickSort;
@@ -11,6 +12,7 @@ using SelectionSort;
 using Stack;
 using System.Collections.Generic;
 using System.Linq;
+using TernarySearch;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -27,14 +29,16 @@ namespace DataStructuresAndAlgorithms
                 Console.WriteLine(" 1.  Generate Random Items");
                 Console.WriteLine(" 2.  Linear Seach");
                 Console.WriteLine(" 3.  Binary Search");
-                Console.WriteLine(" 4.  Bubble Sort");
-                Console.WriteLine(" 5.  Insertion Sort ");
-                Console.WriteLine(" 6.  Selection Sort ");
-                Console.WriteLine(" 7.  Merge Sort ");
-                Console.WriteLine(" 8.  Quick Sort ");
-                Console.WriteLine(" 9.  Custom Graph");
-                Console.WriteLine(" 10. Custom Srack");
-                Console.WriteLine(" 11. Custom Queue");
+                Console.WriteLine(" 4.  Ternary Search");
+                Console.WriteLine(" 5.  Jump Search");
+                Console.WriteLine(" 6.  Bubble Sort");
+                Console.WriteLine(" 7.  Insertion Sort ");
+                Console.WriteLine(" 8.  Selection Sort ");
+                Console.WriteLine(" 9.  Merge Sort ");
+                Console.WriteLine(" 10. Quick Sort ");
+                Console.WriteLine(" 11. Custom Graph");
+                Console.WriteLine(" 12. Custom Srack");
+                Console.WriteLine(" 13. Custom Queue");
                 Console.WriteLine(" 0.  Exit");
                 Console.Write("\n Enter your choice: ");
 
@@ -44,7 +48,7 @@ namespace DataStructuresAndAlgorithms
                     switch (choice)
                     {
                         case 1:
-                            items = RandomDataFilling.GenerateItems();
+                            items = await RandomDataFilling.GenerateItems();
 
                             if (items.Count() > 0)
                             {
@@ -84,7 +88,7 @@ namespace DataStructuresAndAlgorithms
                                 if (int.TryParse(Console.ReadLine(), out int searchId))
                                 {
 
-                                    int linearSearchIndex = LinearSearchAlgorithm.Search(items, searchId);
+                                    int linearSearchIndex = await LinearSearchAlgorithm<Item>.Search(items, searchId);
                                     if (linearSearchIndex != -1)
                                     {
                                         Console.WriteLine($"\n Item with ID {searchId} found at index {linearSearchIndex}.");
@@ -130,7 +134,7 @@ namespace DataStructuresAndAlgorithms
 
                                     binarylist.Sort((item1, item2) => item1.Id.CompareTo(item2.Id));
 
-                                    int binarySearchIndex = BinarySearchAlgorithm.Search(binarylist, searchId);
+                                    int binarySearchIndex = await BinarySearchAlgorithm<Item>.Search(binarylist, searchId);
 
                                     if (binarySearchIndex != -1)
                                     {
@@ -155,6 +159,100 @@ namespace DataStructuresAndAlgorithms
                             break;
 
                         case 4:
+
+                            if (items.Count() > 0)
+                            {
+                                for (int i = 0; i < items.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+
+                                Console.Write("\n Enter the ID to search: ");
+                                if (int.TryParse(Console.ReadLine(), out int searchId))
+                                {
+
+                                    var ternarylist = new List<Item>();
+
+                                    ternarylist.AddRange(items);
+
+
+                                    ternarylist.Sort((item1, item2) => item1.Id.CompareTo(item2.Id));
+
+                                    int ternarySearchIndex = await TernarySearchAlgorithm<Item>.Search(ternarylist, 0, items.Count - 1, searchId);
+
+                                    if (ternarySearchIndex != -1)
+                                    {
+                                        Console.WriteLine($"\n Item with ID {searchId} found at index {items.IndexOf(items.Where(i => i.Id == searchId).FirstOrDefault())}.");
+                                        Console.WriteLine($" Id: {ternarylist[ternarySearchIndex].Id}, Name: {ternarylist[ternarySearchIndex].Name}");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($" Item with ID {searchId} not found.");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine(" Invalid input for ID. Please enter a valid integer.");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($" Item list is null");
+                            }
+                            await Task.CompletedTask;
+                            break;
+
+                        case 5:
+
+                            if (items.Count() > 0)
+                            {
+                                for (int i = 0; i < items.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+
+                                Console.Write("\n Enter the ID to search: ");
+                                if (int.TryParse(Console.ReadLine(), out int searchId))
+                                {
+
+                                    var jumplist = new List<Item>();
+
+                                    jumplist.AddRange(items);
+
+
+                                    jumplist.Sort((item1, item2) => item1.Id.CompareTo(item2.Id));
+
+                                    int jumpSearchIndex = await JumpSearchAlgorithm<Item>.Search(jumplist, searchId);
+
+                                    if (jumpSearchIndex != -1)
+                                    {
+                                        Console.WriteLine($"\n Item with ID {searchId} found at index {items.IndexOf(items.Where(i => i.Id == searchId).FirstOrDefault())}.");
+                                        Console.WriteLine($" Id: {jumplist[jumpSearchIndex].Id}, Name: {jumplist[jumpSearchIndex].Name}");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($" Item with ID {searchId} not found.");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine(" Invalid input for ID. Please enter a valid integer.");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($" Item list is null");
+                            }
+                            await Task.CompletedTask;
+                            break;
+
+                        case 6:
 
 
 
@@ -189,7 +287,7 @@ namespace DataStructuresAndAlgorithms
                             await Task.CompletedTask;
                             break;
 
-                        case 5:
+                        case 7:
 
                             if (items.Count() > 0)
                             {
@@ -222,7 +320,7 @@ namespace DataStructuresAndAlgorithms
                             await Task.CompletedTask;
                             break;
 
-                        case 6:
+                        case 8:
 
                             if (items.Count() > 0)
                             {
@@ -255,7 +353,7 @@ namespace DataStructuresAndAlgorithms
                             await Task.CompletedTask;
                             break;
 
-                        case 7:
+                        case 9:
 
                             if (items.Count() > 0)
                             {
@@ -289,7 +387,7 @@ namespace DataStructuresAndAlgorithms
                             await Task.CompletedTask;
                             break;
 
-                        case 8:
+                        case 10:
 
                             if (items.Count() > 0)
                             {
@@ -323,7 +421,7 @@ namespace DataStructuresAndAlgorithms
                             await Task.CompletedTask;
                             break;
 
-                        case 9:
+                        case 11:
 
                             while (true)
                             {
@@ -514,9 +612,7 @@ namespace DataStructuresAndAlgorithms
                                 Console.Clear();
                             }
 
-
-
-                        case 10:
+                        case 12:
 
                             while (true)
                             {
@@ -608,7 +704,7 @@ namespace DataStructuresAndAlgorithms
 
                             }
 
-                        case 11:
+                        case 13:
 
                             while (true)
                             {

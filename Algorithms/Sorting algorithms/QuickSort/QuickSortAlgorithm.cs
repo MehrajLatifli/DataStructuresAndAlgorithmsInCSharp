@@ -9,26 +9,28 @@ namespace QuickSort
     {
         public static async Task<List<T>> Sorting(List<T> items)
         {
-            await Task.Run(() =>
+            await Task.Run( async() =>
             {
-                QuickSort(items, 0, items.Count - 1);
+                 await  QuickSort(items, 0, items.Count - 1); // Wait for the asynchronous sorting to complete.
             });
 
             return items;
         }
 
-        static void QuickSort(List<T> items, int low, int high)
+        static async Task QuickSort(List<T> items, int low, int high)
         {
             if (low < high)
             {
-                int partitionIndex = Partition(items, low, high);
+                int partitionIndex = Partition(items, low, high).Result;
 
-                QuickSort(items, low, partitionIndex - 1);
-                QuickSort(items, partitionIndex + 1, high);
+                Task.WaitAll(
+                    Task.Run(() => QuickSort(items, low, partitionIndex - 1)),
+                    Task.Run(() => QuickSort(items, partitionIndex + 1, high))
+                );
             }
         }
 
-        static int Partition(List<T> items, int low, int high)
+        static async Task<int> Partition(List<T> items, int low, int high)
         {
             T pivot = items[high];
             int i = low - 1;
@@ -38,19 +40,23 @@ namespace QuickSort
                 if (items[j].Id < pivot.Id)
                 {
                     i++;
-                    Swap(items, i, j);
+                    await Swap(items, i, j);
                 }
             }
 
-            Swap(items, i + 1, high);
+            await Swap(items, i + 1, high);
             return i + 1;
         }
 
-        static void Swap(List<T> items, int i, int j)
+        static async Task Swap(List<T> items, int i, int j)
         {
-            T temp = items[i];
-            items[i] = items[j];
-            items[j] = temp;
+            await Task.Run(() =>
+            {
+                T temp = items[i];
+                items[i] = items[j];
+                items[j] = temp;
+            });
         }
+
     }
 }
