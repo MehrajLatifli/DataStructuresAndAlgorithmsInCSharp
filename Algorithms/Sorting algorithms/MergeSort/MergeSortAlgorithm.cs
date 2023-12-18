@@ -9,9 +9,9 @@ namespace MergeSort
     {
         public static async Task<List<T>> Sorting(List<T> items)
         {
-            await Task.Run(() =>
+            await Task.Run(async () =>
             {
-                MergeSort(items);
+               await MergeSort(items);
             });
 
             return items;
@@ -33,13 +33,13 @@ namespace MergeSort
                     MergeSort(right)
                 );
 
-                Merge(items, left, right);
+                await Merge(items, left, right);
 
 
             }
         }
 
-        static void Merge(List<T> items, List<T> left, List<T> right)
+        static async Task Merge(List<T> items, List<T> left, List<T> right)
         {
             int i = 0, j = 0, k = 0;
             int leftCount = left.Count;
