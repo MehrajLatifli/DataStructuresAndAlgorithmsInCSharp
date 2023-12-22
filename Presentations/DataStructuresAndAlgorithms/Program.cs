@@ -1,6 +1,8 @@
-﻿using BinarySearch;
+﻿using ArrayList;
+using BinarySearch;
 using BubbleSort;
 using Data;
+using FibonacciSearch;
 using Graph;
 using InsertionSort;
 using JumpSearch;
@@ -19,7 +21,7 @@ namespace DataStructuresAndAlgorithms
     public class Program
     {
 
-        static async Task Menu(List<Item> items, CustomGraph<Item> itemGraph, CustomStack<Item> customStack, CustomQueue<Item> customQueue)
+        static async Task Menu(List<Item> items, CustomGraph<Item> itemGraph, CustomStack<Item> customStack, CustomQueue<Item> customQueue, CustomArrayList<Item> customArrayList)
         {
             while (true)
             {
@@ -31,14 +33,16 @@ namespace DataStructuresAndAlgorithms
                 Console.WriteLine(" 3.  Binary Search");
                 Console.WriteLine(" 4.  Ternary Search");
                 Console.WriteLine(" 5.  Jump Search");
-                Console.WriteLine(" 6.  Bubble Sort");
-                Console.WriteLine(" 7.  Insertion Sort");
-                Console.WriteLine(" 8.  Selection Sort");
-                Console.WriteLine(" 9.  Merge Sort");
-                Console.WriteLine(" 10. Quick Sort");
-                Console.WriteLine(" 11. Custom Graph");
-                Console.WriteLine(" 12. Custom Srack");
-                Console.WriteLine(" 13. Custom Queue");
+                Console.WriteLine(" 6.  Fibonacci Search");
+                Console.WriteLine(" 7.  Bubble Sort");
+                Console.WriteLine(" 8.  Insertion Sort");
+                Console.WriteLine(" 9.  Selection Sort");
+                Console.WriteLine(" 10. Merge Sort");
+                Console.WriteLine(" 11. Quick Sort");
+                Console.WriteLine(" 12. Custom Graph");
+                Console.WriteLine(" 13. Custom Srack");
+                Console.WriteLine(" 14. Custom Queue");
+                Console.WriteLine(" 15. Custom ArrayList");
                 Console.WriteLine(" 0.  Exit");
                 Console.Write("\n Enter your choice: ");
 
@@ -254,6 +258,53 @@ namespace DataStructuresAndAlgorithms
 
                         case 6:
 
+                            if (items.Count() > 0)
+                            {
+                                for (int i = 0; i < items.Count; i++)
+                                {
+                                    var item = items[i];
+
+                                    Console.WriteLine($" Index: {i} \t Id: {item.Id} \t Name: {item.Name}");
+                                }
+
+
+                                Console.Write("\n Enter the ID to search: ");
+                                if (int.TryParse(Console.ReadLine(), out int searchId))
+                                {
+
+                                    var fibonaccilist = new List<Item>();
+
+                                    fibonaccilist.AddRange(items);
+
+
+                                    fibonaccilist.Sort((item1, item2) => item1.Id.CompareTo(item2.Id));
+
+                                    int fibonacciSearchIndex = await FibonacciSearchAlgorithm<Item>.Search(fibonaccilist, searchId);
+
+                                    if (fibonacciSearchIndex != -1)
+                                    {
+                                        Console.WriteLine($"\n Item with ID {searchId} found at index {items.IndexOf(items.Where(i => i.Id == searchId).FirstOrDefault())}.");
+                                        Console.WriteLine($" Id: {fibonaccilist[fibonacciSearchIndex].Id}, Name: {fibonaccilist[fibonacciSearchIndex].Name}");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($" Item with ID {searchId} not found.");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine(" Invalid input for ID. Please enter a valid integer.");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($" Item list is null");
+                            }
+                            await Task.CompletedTask;
+                            break;
+
+                        case 7:
+
 
 
                             if (items.Count() > 0)
@@ -287,7 +338,7 @@ namespace DataStructuresAndAlgorithms
                             await Task.CompletedTask;
                             break;
 
-                        case 7:
+                        case 8:
 
                             if (items.Count() > 0)
                             {
@@ -320,7 +371,7 @@ namespace DataStructuresAndAlgorithms
                             await Task.CompletedTask;
                             break;
 
-                        case 8:
+                        case 9:
 
                             if (items.Count() > 0)
                             {
@@ -353,7 +404,7 @@ namespace DataStructuresAndAlgorithms
                             await Task.CompletedTask;
                             break;
 
-                        case 9:
+                        case 10:
 
                             if (items.Count() > 0)
                             {
@@ -387,7 +438,7 @@ namespace DataStructuresAndAlgorithms
                             await Task.CompletedTask;
                             break;
 
-                        case 10:
+                        case 11:
 
                             if (items.Count() > 0)
                             {
@@ -421,7 +472,7 @@ namespace DataStructuresAndAlgorithms
                             await Task.CompletedTask;
                             break;
 
-                        case 11:
+                        case 12:
 
                             while (true)
                             {
@@ -591,7 +642,7 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.Clear();
 
-                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue));
+                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList));
                                             task.Wait();
 
                                             await Task.CompletedTask;
@@ -612,7 +663,7 @@ namespace DataStructuresAndAlgorithms
                                 Console.Clear();
                             }
 
-                        case 12:
+                        case 13:
 
                             while (true)
                             {
@@ -683,7 +734,7 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.Clear();
 
-                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue));
+                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList));
                                             task.Wait();
 
                                             await Task.CompletedTask;
@@ -704,7 +755,7 @@ namespace DataStructuresAndAlgorithms
 
                             }
 
-                        case 13:
+                        case 14:
 
                             while (true)
                             {
@@ -775,7 +826,7 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.Clear();
 
-                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue));
+                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList));
                                             task.Wait();
 
                                             await Task.CompletedTask;
@@ -796,6 +847,189 @@ namespace DataStructuresAndAlgorithms
 
                             }
 
+                        case 15:
+
+                            while (true)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("\n");
+                                Console.WriteLine(" 1. Add");
+                                Console.WriteLine(" 2. Insert");
+                                Console.WriteLine(" 3. Remove");
+                                Console.WriteLine(" 4. RemoveAt");
+                                Console.WriteLine(" 5. Count");
+                                Console.WriteLine(" 6. Clear");
+                                Console.WriteLine(" 7. Display");
+                                Console.WriteLine(" 8. <- ");
+                                Console.Write("\n Enter your choice: ");
+
+                                if (int.TryParse(Console.ReadLine(), out int choice3))
+                                {
+                                    switch (choice3)
+                                    {
+                                        case 1:
+
+                                            Console.Write(" Enter Item Id: ");
+
+                                            if (int.TryParse(Console.ReadLine(), out int itemId))
+                                            {
+
+                                                Console.Write(" Enter Item Name: ");
+                                                string itemName = Console.ReadLine();
+
+                                                Item newItem = new Item { Id = itemId, Name = itemName };
+                                                customArrayList.Add(newItem);
+
+                                                await Task.CompletedTask;
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+
+                                                await Task.CompletedTask;
+                                                Console.WriteLine(" Invalid input for Item Id. Please enter a valid integer.");
+                                            }
+                                            break;
+
+                                        case 2:
+
+                                            Console.Write(" Enter Item Id: ");
+
+                                            if (int.TryParse(Console.ReadLine(), out int itemId2))
+                                            {
+
+                                                Console.Write(" Enter Item Name: ");
+                                                string itemName2 = Console.ReadLine();
+
+                                                Console.Write(" Enter Index: ");
+                                                if (int.TryParse(Console.ReadLine(), out int index))
+                                                {
+                                                    Item newItem = new Item { Id = itemId2, Name = itemName2 };
+                                                    customArrayList.Insert(index, newItem);
+                                                }
+
+                                                else
+                                                {
+                                                    Console.Clear();
+
+                                                    await Task.CompletedTask;
+                                                    Console.WriteLine(" Invalid input for Index. Please enter a valid integer.");
+                                                }
+
+                                                await Task.CompletedTask;
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+
+                                                await Task.CompletedTask;
+                                                Console.WriteLine(" Invalid input for Item Id. Please enter a valid integer.");
+                                            }
+                                            break;
+
+
+                                        case 3:
+
+                                            Console.Write(" Enter Item Id: ");
+
+                                            if (int.TryParse(Console.ReadLine(), out int itemId3))
+                                            {
+
+                                                Console.Write(" Enter Item Name: ");
+                                                string itemName = Console.ReadLine();
+
+                                                Item removeItem = new Item { Id = itemId3, Name = itemName };
+
+
+                                                if(removeItem!=null)
+                                                {
+                                                    customArrayList.Remove(removeItem);
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine(" Invalid input for Item. Please enter a valid object.");
+                                                }
+
+                                                await Task.CompletedTask;
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+
+                                                await Task.CompletedTask;
+                                                Console.WriteLine(" Invalid input for Item Id. Please enter a valid integer.");
+                                            }
+                                            break;
+
+
+                                        case 4:
+
+                                      
+                                                Console.Write(" Enter Index: ");
+                                                if (int.TryParse(Console.ReadLine(), out int index2))
+                                                {
+                                                  
+                                                    customArrayList.RemoveAt(index2);
+                                                }
+
+                                                else
+                                                {
+                                                    Console.Clear();
+
+                                                    await Task.CompletedTask;
+                                                    Console.WriteLine(" Invalid input for Index. Please enter a valid integer.");
+                                                }
+
+                                                await Task.CompletedTask;
+                                      
+                                            break;
+
+                                        case 5:
+                                            Console.WriteLine(" Length of Arraylist: " + customArrayList.Count);
+
+                                            await Task.CompletedTask;
+                                            break;
+
+                                        case 6:
+                                            Console.WriteLine("\n");
+
+                                            customArrayList.Clear();
+
+                                            await Task.CompletedTask;
+                                            break;
+
+                                        case 7:
+                                            Console.WriteLine("\n");
+
+                                            customArrayList.Display();
+
+                                            await Task.CompletedTask;
+                                            break;
+
+                                        case 8:
+
+                                            Console.Clear();
+
+                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList));
+                                            task.Wait();
+
+                                            await Task.CompletedTask;
+                                            return;
+                                    }
+                                }
+
+                                else
+                                {
+                                    Console.WriteLine(" Invalid input. Please enter a valid integer.");
+                                    Console.ReadLine();
+                                }
+
+                                Console.WriteLine("\n Press Enter to continue...");
+                                Console.ReadKey();
+                                Console.Clear();
+
+
+                            }
                         case 0:
                             Console.WriteLine(" Exiting the program. Goodbye!");
                             await Task.CompletedTask;
@@ -832,8 +1066,9 @@ namespace DataStructuresAndAlgorithms
             CustomGraph<Item> itemGraph = new CustomGraph<Item>();
             CustomStack<Item> customStack = new CustomStack<Item>();
             CustomQueue<Item> customQueue = new CustomQueue<Item>();
+            CustomArrayList<Item> customArrayList  = new CustomArrayList<Item>();
 
-            await Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue));
+            await Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList));
         }
     }
 }

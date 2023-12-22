@@ -22,5 +22,19 @@ namespace Data
         {
             return $"Id: {Id}, Name: {Name} ";
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            Item other = (Item)obj;
+            return Id == other.Id && Name == other.Name;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode() ^ (Name ?? "").GetHashCode();
+        }
     }
 }

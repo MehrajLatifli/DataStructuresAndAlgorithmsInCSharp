@@ -8,10 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Algorithms\Custom Abstract data types algorithms\ArrayList\ArrayList.csproj" />
     <ProjectReference Include="..\..\Algorithms\Custom Abstract data types algorithms\Graph\Graph.csproj" />
     <ProjectReference Include="..\..\Algorithms\Custom Abstract data types algorithms\Queue\Queue.csproj" />
     <ProjectReference Include="..\..\Algorithms\Custom Abstract data types algorithms\Stack\Stack.csproj" />
     <ProjectReference Include="..\..\Algorithms\Searching algorithms\BinarySearch\BinarySearch.csproj" />
+    <ProjectReference Include="..\..\Algorithms\Searching algorithms\FibonacciSearch\FibonacciSearch.csproj" />
     <ProjectReference Include="..\..\Algorithms\Searching algorithms\JumpSearch\JumpSearch.csproj" />
     <ProjectReference Include="..\..\Algorithms\Searching algorithms\LinearSearch\LinearSearch.csproj" />
     <ProjectReference Include="..\..\Algorithms\Searching algorithms\TernarySearch\TernarySearch.csproj" />

@@ -4,6 +4,7 @@
 <p> Binary Search </p>
 <p> Ternary Search </p>
 <p> Jump Search </p>
+<p> Fibonacci Search </p>
 
 </br>
 </br>
@@ -24,3 +25,4 @@
 <p> Graph </p>
 <p> Stack </p>
 <p> Queue </p>
+<p> ArrayList </p>
