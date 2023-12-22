@@ -43,9 +43,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack", "Algorithms\Custom 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue", "Algorithms\Custom Abstract data types algorithms\Queue\Queue.csproj", "{45E2DA40-FC03-43A2-AF7B-F3E8F94CE735}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TernarySearch", "Algorithms\Searching algorithms\TernarySearch\TernarySearch.csproj", "{DABF98E7-54A7-4A1C-8679-F2804A23FC97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TernarySearch", "Algorithms\Searching algorithms\TernarySearch\TernarySearch.csproj", "{DABF98E7-54A7-4A1C-8679-F2804A23FC97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpSearch", "Algorithms\Searching algorithms\JumpSearch\JumpSearch.csproj", "{9B2B98BB-90C5-42BE-BDAA-EAC35F9DF41B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JumpSearch", "Algorithms\Searching algorithms\JumpSearch\JumpSearch.csproj", "{9B2B98BB-90C5-42BE-BDAA-EAC35F9DF41B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{566D9F31-E91E-4E53-A676-A4234D2D97B0}"
+	ProjectSection(SolutionItems) = preProject
+		README.MD = README.MD
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
