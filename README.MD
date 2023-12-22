@@ -10,3 +10,10 @@
 
 <h1> Sorting </h1>
 
+<p> Insertion Sort </p>
+<p> Selection Sort </p>
+<p> Merge Sort </p>
+<p> Quick Sort </p>
+<p> Bubble Sort </p>
+
+
