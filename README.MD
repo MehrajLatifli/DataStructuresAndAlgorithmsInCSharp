@@ -1,4 +1,4 @@
-<h1> Searching </h1>
+<h2> Searching </h2>
 
 <p> Linear Search </p>
 <p> Binary Search </p>
@@ -8,7 +8,7 @@
 </br>
 </br>
 
-<h1> Sorting </h1>
+<h2> Sorting </h2>
 
 <p> Insertion Sort </p>
 <p> Selection Sort </p>
