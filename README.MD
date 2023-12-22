@@ -19,7 +19,7 @@
 </br>
 </br>
 
-<h2> Abstract data types ⚅ </h2>
+<h2> Abstract data types ✵ </h2>
 
 <p> Graph </p>
 <p> Stack </p>
