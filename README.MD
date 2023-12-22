@@ -16,4 +16,11 @@
 <p> Quick Sort </p>
 <p> Bubble Sort </p>
 
+</br>
+</br>
 
+<h2> Abstract data types ⏸ </h2>
+
+<p> Graph </p>
+<p> Stack </p>
+<p> Queue </p>
