@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Graph
 {
@@ -27,10 +25,8 @@ namespace Graph
         {
             if (adjacencyList.ContainsKey(vertex))
             {
-   
                 adjacencyList.Remove(vertex);
 
-          
                 foreach (var otherVertex in adjacencyList.Keys)
                 {
                     adjacencyList[otherVertex].Remove(vertex);
@@ -51,7 +47,6 @@ namespace Graph
             }
 
             adjacencyList[source].Add(destination);
-     
         }
 
         public void RemoveEdge(T source, T destination)
@@ -59,8 +54,6 @@ namespace Graph
             if (adjacencyList.ContainsKey(source) && adjacencyList.ContainsKey(destination))
             {
                 adjacencyList[source].Remove(destination);
-
-
             }
         }
 
@@ -91,8 +84,67 @@ namespace Graph
             }
         }
 
+        public int GetVertexIndex(T vertex)
+        {
+            List<T> vertices = GetVertices();
+            return vertices.IndexOf(vertex);
+        }
+
+        public void DepthFirstSearchTraversal(T startVertex)
+        {
+           
+            Stack<T> stack = new Stack<T>();
+            
+            HashSet<T> visited = new HashSet<T>();
+
+           
+            stack.Push(startVertex);
+            visited.Add(startVertex);
+
+            while (stack.Count > 0)
+            {
+               
+                T currentVertex = stack.Pop();
+                Console.Write($"{currentVertex.ToString()} ");
+
+              
+                foreach (var neighbor in adjacencyList[currentVertex])
+                {
+                    
+                    if (!visited.Contains(neighbor))
+                    {
+                        stack.Push(neighbor);
+                        visited.Add(neighbor);
+                    }
+                }
+            }
+            Console.WriteLine();
+        }
+
+        
+        public void BreadthFirstSearchTraversal(T startVertex)
+        {
+            HashSet<T> visited = new HashSet<T>();
+            Queue<T> queue = new Queue<T>();
+
+            visited.Add(startVertex);
+            queue.Enqueue(startVertex);
+
+            while (queue.Count > 0)
+            {
+                T currentVertex = queue.Dequeue();
+                Console.Write($" {currentVertex.ToString()} ");
+
+                foreach (var neighbor in adjacencyList[currentVertex])
+                {
+                    if (!visited.Contains(neighbor))
+                    {
+                        visited.Add(neighbor);
+                        queue.Enqueue(neighbor);
+                    }
+                }
+            }
+        }
+
     }
-
-
-
 }

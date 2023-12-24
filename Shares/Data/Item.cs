@@ -29,12 +29,13 @@ namespace Data
                 return false;
 
             Item other = (Item)obj;
-            return Id == other.Id && Name == other.Name;
+            return Id == other.Id && string.Equals(Name, other.Name, StringComparison.OrdinalIgnoreCase);
         }
 
         public override int GetHashCode()
         {
-            return Id.GetHashCode() ^ (Name ?? "").GetHashCode();
+            return Id.GetHashCode() ^ (Name ?? "").GetHashCode(StringComparison.OrdinalIgnoreCase);
         }
+
     }
 }

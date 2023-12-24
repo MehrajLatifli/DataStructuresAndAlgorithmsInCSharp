@@ -476,6 +476,61 @@ namespace DataStructuresAndAlgorithms
 
                             while (true)
                             {
+
+                                itemGraph = new CustomGraph<Item>();
+
+                                itemGraph.AddVertex(new Item { Id = 1, Name = "A" });
+                                itemGraph.AddVertex(new Item { Id = 2, Name = "B" });
+                                itemGraph.AddVertex(new Item { Id = 3, Name = "C" });
+                                itemGraph.AddVertex(new Item { Id = 4, Name = "D" });
+                                itemGraph.AddVertex(new Item { Id = 5, Name = "E" });
+                                itemGraph.AddVertex(new Item { Id = 6, Name = "F" });
+                                itemGraph.AddVertex(new Item { Id = 7, Name = "H" });
+                                itemGraph.AddVertex(new Item { Id = 8, Name = "I" });
+
+
+                                Item sourceItem_1 = itemGraph.GetVertices().Find(item => item.Id == 1);
+                                Item destinationItem_1 = itemGraph.GetVertices().Find(item => item.Id == 8);
+                                itemGraph.AddEdge(sourceItem_1, destinationItem_1);
+
+                                Item sourceItem_2 = itemGraph.GetVertices().Find(item => item.Id == 1);
+                                Item destinationItem_2 = itemGraph.GetVertices().Find(item => item.Id == 2);
+                                itemGraph.AddEdge(sourceItem_2, destinationItem_2);
+
+                                Item sourceItem_3 = itemGraph.GetVertices().Find(item => item.Id == 1);
+                                Item destinationItem_3 = itemGraph.GetVertices().Find(item => item.Id == 5);
+                                itemGraph.AddEdge(sourceItem_3, destinationItem_3);
+
+                                Item sourceItem_4 = itemGraph.GetVertices().Find(item => item.Id == 2);
+                                Item destinationItem_4 = itemGraph.GetVertices().Find(item => item.Id == 3);
+                                itemGraph.AddEdge(sourceItem_4, destinationItem_4);
+
+                                Item sourceItem_5 = itemGraph.GetVertices().Find(item => item.Id == 2);
+                                Item destinationItem_5 = itemGraph.GetVertices().Find(item => item.Id == 4);
+                                itemGraph.AddEdge(sourceItem_5, destinationItem_5);
+
+                                Item sourceItem_6 = itemGraph.GetVertices().Find(item => item.Id == 3);
+                                Item destinationItem_6 = itemGraph.GetVertices().Find(item => item.Id == 5);
+                                itemGraph.AddEdge(sourceItem_6, destinationItem_6);
+
+                                Item sourceItem_7 = itemGraph.GetVertices().Find(item => item.Id == 3);
+                                Item destinationItem_7 = itemGraph.GetVertices().Find(item => item.Id == 7);
+                                itemGraph.AddEdge(sourceItem_7, destinationItem_7);
+
+                                Item sourceItem_8 = itemGraph.GetVertices().Find(item => item.Id == 5);
+                                Item destinationItem_8 = itemGraph.GetVertices().Find(item => item.Id == 6);
+                                itemGraph.AddEdge(sourceItem_8, destinationItem_8);
+
+                                Item sourceItem_9 = itemGraph.GetVertices().Find(item => item.Id == 5);
+                                Item destinationItem_9 = itemGraph.GetVertices().Find(item => item.Id == 7);
+                                itemGraph.AddEdge(sourceItem_9, destinationItem_9);
+
+                                Item sourceItem_10 = itemGraph.GetVertices().Find(item => item.Id == 6);
+                                Item destinationItem_10 = itemGraph.GetVertices().Find(item => item.Id == 7);
+                                itemGraph.AddEdge(sourceItem_10, destinationItem_10);
+
+
+
                                 Console.Clear();
                                 Console.WriteLine("\n");
                                 Console.WriteLine(" 1. Add Vertex");
@@ -483,13 +538,16 @@ namespace DataStructuresAndAlgorithms
                                 Console.WriteLine(" 3. Remove Vertex");
                                 Console.WriteLine(" 4. Remove Edge");
                                 Console.WriteLine(" 5. Print Graph");
-                                Console.WriteLine(" 6. <- ");
+                                Console.WriteLine(" 6. Depth First Search");
+                                Console.WriteLine(" 7. Breadth First Search");
+                                Console.WriteLine(" 8. <- ");
                                 Console.Write("\n Enter your choice: ");
 
                                 if (int.TryParse(Console.ReadLine(), out int choice2))
                                 {
                                     switch (choice2)
                                     {
+
                                         case 1:
 
                                             Console.Write(" Enter Item Id: ");
@@ -524,8 +582,8 @@ namespace DataStructuresAndAlgorithms
                                                 // Validate if the input is a valid integer
                                                 if (int.TryParse(Console.ReadLine(), out int destinationId))
                                                 {
-                                                    Data.Item sourceItem = itemGraph.GetVertices().Find(item => item.Id == sourceId);
-                                                    Data.Item destinationItem = itemGraph.GetVertices().Find(item => item.Id == destinationId);
+                                                    Item sourceItem = itemGraph.GetVertices().Find(item => item.Id == sourceId);
+                                                    Item destinationItem = itemGraph.GetVertices().Find(item => item.Id == destinationId);
 
                                                     if (sourceItem != null && destinationItem != null)
                                                     {
@@ -556,7 +614,6 @@ namespace DataStructuresAndAlgorithms
                                             await Task.CompletedTask;
                                             break;
 
-
                                         case 3:
                                             Console.Write(" Enter Item Id to remove: ");
 
@@ -585,7 +642,6 @@ namespace DataStructuresAndAlgorithms
 
                                             await Task.CompletedTask;
                                             break;
-
 
                                         case 4:
                                             Console.Write(" Enter Source Item Id: ");
@@ -630,8 +686,6 @@ namespace DataStructuresAndAlgorithms
                                             await Task.CompletedTask;
                                             break;
 
-
-
                                         case 5:
                                             Console.WriteLine(" Graph:");
                                             itemGraph.PrintGraph();
@@ -639,6 +693,39 @@ namespace DataStructuresAndAlgorithms
                                             break;
 
                                         case 6:
+                                            Console.WriteLine("\n");
+                                            itemGraph.PrintGraph();
+
+                                            Console.WriteLine("\n");
+                                            Console.WriteLine(" Depth First Search:");
+                                      
+                                            Console.WriteLine("\n");
+
+                                            itemGraph.DepthFirstSearchTraversal(sourceItem_1);
+
+                                            Console.WriteLine("\n");
+
+                                            await Task.CompletedTask;
+                                            break;
+
+                                        case 7:
+                                            Console.WriteLine("\n");
+                                            itemGraph.PrintGraph();
+
+                                            Console.WriteLine("\n");
+
+                                            Console.WriteLine( " Breadth First Search:");
+
+                                            Console.WriteLine("\n");
+
+                                            itemGraph.BreadthFirstSearchTraversal(sourceItem_1);
+
+                                            Console.WriteLine("\n");
+
+                                            await Task.CompletedTask;
+                                            break;
+
+                                        case 8:
 
                                             Console.Clear();
 

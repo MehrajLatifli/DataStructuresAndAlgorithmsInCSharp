@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Searching algorithms", "Sea
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sorting algorithms", "Sorting algorithms", "{90AAC62F-6373-40D6-B54E-B5BF7AC25166}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graph algorithms", "Graph algorithms", "{78F264CC-2F2F-4F60-AD3E-0A5997566A33}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algorithms", "Algorithms", "{BDB42EA0-6473-45BF-8F24-3A2EA60CEC13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shares", "Shares", "{51CDAE2C-26DF-4EC6-8A66-D94120ECC850}"
@@ -54,7 +52,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FibonacciSearch", "Algorithms\Searching algorithms\FibonacciSearch\FibonacciSearch.csproj", "{DDC6BB8F-9AA8-45C0-881B-DD55921D8FB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayList", "Algorithms\Custom Abstract data types algorithms\ArrayList\ArrayList.csproj", "{B892F235-1D33-4834-A7ED-25CA07C59F9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayList", "Algorithms\Custom Abstract data types algorithms\ArrayList\ArrayList.csproj", "{B892F235-1D33-4834-A7ED-25CA07C59F9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,7 +135,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{EDA88687-37E5-4CB0-B165-99C234663DCC} = {BDB42EA0-6473-45BF-8F24-3A2EA60CEC13}
 		{90AAC62F-6373-40D6-B54E-B5BF7AC25166} = {BDB42EA0-6473-45BF-8F24-3A2EA60CEC13}
-		{78F264CC-2F2F-4F60-AD3E-0A5997566A33} = {BDB42EA0-6473-45BF-8F24-3A2EA60CEC13}
 		{B9861353-6ADF-4191-A847-F517ADD4B9A0} = {EDA88687-37E5-4CB0-B165-99C234663DCC}
 		{B70D8BBF-33EC-4FF9-84BB-E378CE03A3A7} = {EDA88687-37E5-4CB0-B165-99C234663DCC}
 		{97F18839-2773-43C8-A7C7-1E05888E8312} = {BDB42EA0-6473-45BF-8F24-3A2EA60CEC13}
