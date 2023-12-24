@@ -44,14 +44,14 @@ namespace HashSet
 
             if (index >= 0)
             {
-                // Shift elements to fill the gap
+               
                 for (int i = index; i < count - 1; i++)
                 {
                     items[i] = items[i + 1];
                 }
 
-                items[count - 1] = default(T); // Clear the last element
-                count--; // Update count after removing an item
+                items[count - 1] = default(T); 
+                count--; 
 
                 return true;
             }
