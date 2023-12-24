@@ -105,7 +105,7 @@ namespace Graph
             {
                
                 T currentVertex = stack.Pop();
-                Console.Write($"{currentVertex.ToString()} ");
+                Console.Write($" {currentVertex.ToString()} ");
 
               
                 foreach (var neighbor in adjacencyList[currentVertex])
@@ -121,7 +121,33 @@ namespace Graph
             Console.WriteLine();
         }
 
-        
+
+        //public void DepthFirstSearchTraversal(T startVertex)
+        //{
+        //    HashSet<T> visited = new HashSet<T>();
+        //    int startVertexIndex = GetVertexIndex(startVertex);
+        //    Console.WriteLine($"Index of startVertex {startVertex.ToString()}: {startVertexIndex}");
+        //    DFSRecursive(startVertex, visited);
+        //}
+
+        //private void DFSRecursive(T vertex, HashSet<T> visited)
+        //{
+        //    if (!visited.Contains(vertex))
+        //    {
+        //        Console.Write($" {vertex.ToString()} ");
+
+        //        visited.Add(vertex);
+
+        //        foreach (var neighbor in adjacencyList[vertex])
+        //        {
+        //            if (!visited.Contains(neighbor))
+        //            {
+        //                DFSRecursive(neighbor, visited);
+        //            }
+        //        }
+        //    }
+        //}
+
         public void BreadthFirstSearchTraversal(T startVertex)
         {
             HashSet<T> visited = new HashSet<T>();

@@ -484,51 +484,67 @@ namespace DataStructuresAndAlgorithms
                                 itemGraph.AddVertex(new Item { Id = 3, Name = "C" });
                                 itemGraph.AddVertex(new Item { Id = 4, Name = "D" });
                                 itemGraph.AddVertex(new Item { Id = 5, Name = "E" });
-                                itemGraph.AddVertex(new Item { Id = 6, Name = "F" });
-                                itemGraph.AddVertex(new Item { Id = 7, Name = "H" });
+                                itemGraph.AddVertex(new Item { Id = 6, Name = "H" });
+                                itemGraph.AddVertex(new Item { Id = 7, Name = "G" });
                                 itemGraph.AddVertex(new Item { Id = 8, Name = "I" });
 
 
                                 Item sourceItem_1 = itemGraph.GetVertices().Find(item => item.Id == 1);
-                                Item destinationItem_1 = itemGraph.GetVertices().Find(item => item.Id == 8);
+                                Item destinationItem_1 = itemGraph.GetVertices().Find(item => item.Id == 2);
                                 itemGraph.AddEdge(sourceItem_1, destinationItem_1);
 
                                 Item sourceItem_2 = itemGraph.GetVertices().Find(item => item.Id == 1);
-                                Item destinationItem_2 = itemGraph.GetVertices().Find(item => item.Id == 2);
+                                Item destinationItem_2 = itemGraph.GetVertices().Find(item => item.Id == 3);
                                 itemGraph.AddEdge(sourceItem_2, destinationItem_2);
 
                                 Item sourceItem_3 = itemGraph.GetVertices().Find(item => item.Id == 1);
-                                Item destinationItem_3 = itemGraph.GetVertices().Find(item => item.Id == 5);
+                                Item destinationItem_3 = itemGraph.GetVertices().Find(item => item.Id == 4);
                                 itemGraph.AddEdge(sourceItem_3, destinationItem_3);
 
-                                Item sourceItem_4 = itemGraph.GetVertices().Find(item => item.Id == 2);
-                                Item destinationItem_4 = itemGraph.GetVertices().Find(item => item.Id == 3);
+                                Item sourceItem_4 = itemGraph.GetVertices().Find(item => item.Id == 1);
+                                Item destinationItem_4 = itemGraph.GetVertices().Find(item => item.Id == 5);
                                 itemGraph.AddEdge(sourceItem_4, destinationItem_4);
 
                                 Item sourceItem_5 = itemGraph.GetVertices().Find(item => item.Id == 2);
-                                Item destinationItem_5 = itemGraph.GetVertices().Find(item => item.Id == 4);
+                                Item destinationItem_5 = itemGraph.GetVertices().Find(item => item.Id == 3);
                                 itemGraph.AddEdge(sourceItem_5, destinationItem_5);
 
-                                Item sourceItem_6 = itemGraph.GetVertices().Find(item => item.Id == 3);
-                                Item destinationItem_6 = itemGraph.GetVertices().Find(item => item.Id == 5);
+                                Item sourceItem_6 = itemGraph.GetVertices().Find(item => item.Id == 2);
+                                Item destinationItem_6 = itemGraph.GetVertices().Find(item => item.Id == 4);
                                 itemGraph.AddEdge(sourceItem_6, destinationItem_6);
 
                                 Item sourceItem_7 = itemGraph.GetVertices().Find(item => item.Id == 3);
-                                Item destinationItem_7 = itemGraph.GetVertices().Find(item => item.Id == 7);
+                                Item destinationItem_7 = itemGraph.GetVertices().Find(item => item.Id == 5);
                                 itemGraph.AddEdge(sourceItem_7, destinationItem_7);
 
                                 Item sourceItem_8 = itemGraph.GetVertices().Find(item => item.Id == 5);
-                                Item destinationItem_8 = itemGraph.GetVertices().Find(item => item.Id == 6);
+                                Item destinationItem_8 = itemGraph.GetVertices().Find(item => item.Id == 4);
                                 itemGraph.AddEdge(sourceItem_8, destinationItem_8);
 
-                                Item sourceItem_9 = itemGraph.GetVertices().Find(item => item.Id == 5);
-                                Item destinationItem_9 = itemGraph.GetVertices().Find(item => item.Id == 7);
+                                Item sourceItem_9 = itemGraph.GetVertices().Find(item => item.Id == 4);
+                                Item destinationItem_9 = itemGraph.GetVertices().Find(item => item.Id == 6);
                                 itemGraph.AddEdge(sourceItem_9, destinationItem_9);
 
                                 Item sourceItem_10 = itemGraph.GetVertices().Find(item => item.Id == 6);
-                                Item destinationItem_10 = itemGraph.GetVertices().Find(item => item.Id == 7);
+                                Item destinationItem_10 = itemGraph.GetVertices().Find(item => item.Id == 5);
                                 itemGraph.AddEdge(sourceItem_10, destinationItem_10);
 
+
+                                Item sourceItem_11 = itemGraph.GetVertices().Find(item => item.Id == 6);
+                                Item destinationItem_11 = itemGraph.GetVertices().Find(item => item.Id == 8);
+                                itemGraph.AddEdge(sourceItem_11, destinationItem_11);
+
+                                Item sourceItem_12 = itemGraph.GetVertices().Find(item => item.Id == 6);
+                                Item destinationItem_12 = itemGraph.GetVertices().Find(item => item.Id == 7);
+                                itemGraph.AddEdge(sourceItem_12, destinationItem_12);
+
+                                Item sourceItem_13 = itemGraph.GetVertices().Find(item => item.Id == 7);
+                                Item destinationItem_13 = itemGraph.GetVertices().Find(item => item.Id == 8);
+                                itemGraph.AddEdge(sourceItem_13, destinationItem_13);
+
+                                Item sourceItem_14 = itemGraph.GetVertices().Find(item => item.Id == 7);
+                                Item destinationItem_14 = itemGraph.GetVertices().Find(item => item.Id == 2);
+                                itemGraph.AddEdge(sourceItem_14, destinationItem_14);
 
 
                                 Console.Clear();
@@ -694,6 +710,8 @@ namespace DataStructuresAndAlgorithms
 
                                         case 6:
                                             Console.WriteLine("\n");
+
+
                                             itemGraph.PrintGraph();
 
                                             Console.WriteLine("\n");
@@ -1149,6 +1167,8 @@ namespace DataStructuresAndAlgorithms
 
         static async Task Main(string[] args)
         {
+            Console.Title = "Data Structures And Algorithms";
+           
             List<Item> items = new List<Item>();
             CustomGraph<Item> itemGraph = new CustomGraph<Item>();
             CustomStack<Item> customStack = new CustomStack<Item>();
