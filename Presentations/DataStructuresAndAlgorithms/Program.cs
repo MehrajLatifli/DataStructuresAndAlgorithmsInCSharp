@@ -4,6 +4,7 @@ using BubbleSort;
 using Data;
 using FibonacciSearch;
 using Graph;
+using HashSet;
 using InsertionSort;
 using JumpSearch;
 using LinearSearch;
@@ -21,7 +22,7 @@ namespace DataStructuresAndAlgorithms
     public class Program
     {
 
-        static async Task Menu(List<Item> items, CustomGraph<Item> itemGraph, CustomStack<Item> customStack, CustomQueue<Item> customQueue, CustomArrayList<Item> customArrayList)
+        static async Task Menu(List<Item> items, CustomGraph<Item> itemGraph, CustomStack<Item> customStack, CustomQueue<Item> customQueue, CustomArrayList<Item> customArrayList, CustomHashSet<Item> customHashSet)
         {
             while (true)
             {
@@ -43,6 +44,7 @@ namespace DataStructuresAndAlgorithms
                 Console.WriteLine(" 13. Custom Srack");
                 Console.WriteLine(" 14. Custom Queue");
                 Console.WriteLine(" 15. Custom ArrayList");
+                Console.WriteLine(" 16. Custom HashSet");
                 Console.WriteLine(" 0.  Exit");
                 Console.Write("\n Enter your choice: ");
 
@@ -52,7 +54,7 @@ namespace DataStructuresAndAlgorithms
                     switch (choice)
                     {
                         case 1:
-                            items = await RandomDataFilling.GenerateItems();
+                            items = await RandomDataFilling.GenerateItems(10,10001,10);
 
                             if (items.Count() > 0)
                             {
@@ -747,7 +749,7 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.Clear();
 
-                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList));
+                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList, customHashSet));
                                             task.Wait();
 
                                             await Task.CompletedTask;
@@ -839,7 +841,7 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.Clear();
 
-                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList));
+                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList, customHashSet));
                                             task.Wait();
 
                                             await Task.CompletedTask;
@@ -931,7 +933,7 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.Clear();
 
-                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList));
+                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList, customHashSet));
                                             task.Wait();
 
                                             await Task.CompletedTask;
@@ -1115,7 +1117,7 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.Clear();
 
-                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList));
+                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList, customHashSet));
                                             task.Wait();
 
                                             await Task.CompletedTask;
@@ -1131,6 +1133,155 @@ namespace DataStructuresAndAlgorithms
 
                                 Console.WriteLine("\n Press Enter to continue...");
                                 Console.ReadKey();
+                                Console.Clear();
+
+
+                            }
+
+                        case 16:
+
+                            while (true)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("\n");
+                                Console.WriteLine(" 1. Add");
+                                Console.WriteLine(" 2. Remove");
+                                Console.WriteLine(" 3. Contains");
+                                Console.WriteLine(" 4. Count");
+                                Console.WriteLine(" 5. Display");
+                                Console.WriteLine(" 6. Clear");
+                                Console.WriteLine(" 7. <- ");
+                                Console.Write("\n Enter your choice: ");
+
+                                if (int.TryParse(Console.ReadLine(), out int choice3))
+                                {
+                                    switch (choice3)
+                                    {
+                                        case 1:
+
+                                            Console.Write("\n Enter Item Id: ");
+                                            if (int.TryParse(Console.ReadLine(), out int itemId))
+                                            {
+
+                                                Console.Write(" Enter Item Name: ");
+                                                string itemName = Console.ReadLine();
+
+                                             
+
+                                                Item newItem = new Item { Id = itemId, Name = itemName };
+                                                customHashSet.Add(newItem);
+
+                                                await Task.CompletedTask;
+
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+                                                await Task.CompletedTask;
+                                                Console.WriteLine(" Invalid input for Item Id. Please enter a valid integer.");
+                                            }
+                                            break;
+
+
+                                        case 2:
+
+                                            Console.WriteLine("\n");
+                                            customHashSet.DisplayAll();
+
+                                            Console.Write("\n Enter Item Id: ");
+                                            if (int.TryParse(Console.ReadLine(), out int r_itemId))
+                                            {
+
+                                                Console.Write(" Enter Item Name: ");
+                                                string r_itemName = Console.ReadLine();
+
+                                                customHashSet.Remove(new Item { Id = r_itemId, Name = r_itemName });
+
+                                                Console.WriteLine("\n");
+                                                customHashSet.DisplayAll();
+
+                                                await Task.CompletedTask;
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+                                                await Task.CompletedTask;
+                                                Console.WriteLine(" Invalid input for Item Id. Please enter a valid integer.");
+                                            }
+                                            break;
+
+
+                                        case 3:
+                                            Console.Write(" Enter Item Id: ");
+                                            if (int.TryParse(Console.ReadLine(), out int c_itemId))
+                                            {
+
+                                                Console.Write(" Enter Item Name: ");
+                                                string c_itemName = Console.ReadLine();
+
+                                                Item itemToCheck = new Item { Id = c_itemId, Name = c_itemName };
+
+
+                                                if (itemToCheck != null && customHashSet.Contains(itemToCheck))
+                                                {
+                                                    Console.WriteLine($"\n The HashSet contains {itemToCheck}.");
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine($"\n The HashSet does not contain.");
+                                                }
+
+                                                await Task.CompletedTask;
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+                                                await Task.CompletedTask;
+                                                Console.WriteLine(" Invalid input for Item Id. Please enter a valid integer.");
+                                            }
+                                            break;
+
+                                        case 4:
+                                            Console.WriteLine("\n");
+                                            Console.WriteLine(" HashSet count: "+customHashSet.Count);
+
+                                             await Task.CompletedTask;
+                                            break;
+                                        case 5:
+                                            Console.WriteLine("\n");
+                                            customHashSet.DisplayAll();
+
+                                            await Task.CompletedTask;
+                                            break;
+                                        case 6:
+                                            Console.WriteLine("\n");
+                                            customHashSet.Clear();
+
+                                            await Task.CompletedTask;
+                                            break;
+
+                                        case 7:
+
+                                            Console.Clear();
+
+                                            var task = Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList, customHashSet));
+                                            task.Wait();
+
+                                            await Task.CompletedTask;
+                                            return;
+                                    }
+                                }
+
+                                else
+                                {
+                                    Console.WriteLine(" Invalid input. Please enter a valid integer.");
+                                    Console.ReadLine();
+                                }
+
+                                Console.WriteLine("\n Press Enter to continue...");
+                                Console.ReadKey();
+                                
+                                
                                 Console.Clear();
 
 
@@ -1174,8 +1325,9 @@ namespace DataStructuresAndAlgorithms
             CustomStack<Item> customStack = new CustomStack<Item>();
             CustomQueue<Item> customQueue = new CustomQueue<Item>();
             CustomArrayList<Item> customArrayList  = new CustomArrayList<Item>();
+            CustomHashSet<Item> customHashSet  = new CustomHashSet<Item>();
 
-            await Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList));
+            await Task.Run(async () => await Menu(items, itemGraph, customStack, customQueue, customArrayList, customHashSet));
         }
     }
 }

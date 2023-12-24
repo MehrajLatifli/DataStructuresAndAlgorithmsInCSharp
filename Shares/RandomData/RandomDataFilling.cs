@@ -11,15 +11,15 @@ namespace RandomData
     {
 
 
-        public static async Task< List<Item>> GenerateItems()
+        public static async Task< List<Item>> GenerateItems(int minValue, int maxValue, int loop)
         {
             List<Item> items = new List<Item>();
             List<int> list = new List<int>();
 
             Random random = new Random();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < loop; i++)
             {
-                int randomNumber = random.Next(10, 10001);
+                int randomNumber = random.Next(minValue, maxValue);
                 list.Add(randomNumber);
             }
 
@@ -33,5 +33,13 @@ namespace RandomData
 
             return items;
         }
+
+        public static async Task<int> GenerateRandomId(int minValue, int maxValue)
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(minValue, maxValue);
+            return randomNumber;
+        }
+
     }
 }
