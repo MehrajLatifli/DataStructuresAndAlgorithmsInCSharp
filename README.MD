@@ -1,4 +1,7 @@
-﻿<img src="/cover.jpg" alt="Data Structures & Algorithms"/> 
+﻿</br>
+</br>
+
+<img src="/cover.jpg" alt="Data Structures & Algorithms"/> 
 
 </br>
 </br>
