@@ -16,6 +16,8 @@
 <p> Merge Sort </p>
 <p> Quick Sort </p>
 <p> Bubble Sort </p>
+<p> Pancake Sort </p>
+<p> Bucket Sort </p>
 
 </br>
 </br>
@@ -27,3 +29,4 @@
 <p> Queue </p>
 <p> ArrayList </p>
 <p> HashSet </p>
+<p> LinkedList </p>

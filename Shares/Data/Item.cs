@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace Data
 {
 
-    public class Item : IItem
+    public class Item : IItem, IComparable<Item>
     {
         public Item()
         {
-            
+
         }
 
         public int Id { get; set; }
@@ -20,7 +20,7 @@ namespace Data
 
         public override string ToString()
         {
-            return $"Id: {Id}, Name: {Name} ";
+            return $" Id: {Id}, Name: {Name}  ";
         }
 
         public override bool Equals(object obj)
@@ -37,5 +37,9 @@ namespace Data
             return Id.GetHashCode() ^ (Name ?? "").GetHashCode(StringComparison.OrdinalIgnoreCase);
         }
 
+        public int CompareTo(Item? other)
+        {
+            return Id.CompareTo(other.Id);
+        }
     }
 }
