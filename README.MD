@@ -173,33 +173,44 @@ namespace RandomData
 </ul>
 
 
-<table class="table table-striped">
+<table >
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+
+      <th >Searching 🔎 </th>
+      <th >Sorting ▲▼</th>
+      <th >Abstract data types ✵</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+
+ <td> <li> <a href="/Algorithms/Searching%20algorithms/LinearSearch/LinearSearchAlgorithm.cs"> Linear Search </a> </li>                 </td>
+ <td> <li> <a href="/Algorithms/Searching%20algorithms/BinarySearch/BinarySearchAlgorithm.cs"> Binary Search </a> </li>                 </td>
+ <td> <li> <a href="/Algorithms/Searching%20algorithms/TernarySearch/TernarySearchAlgorithm.cs">Ternary Search </a> </li>               </td>
+ <td> <li> <a href="/Algorithms/Searching%20algorithms/JumpSearch/JumpSearchAlgorithm.cs"> Jump Search </a> </li>                       </td>
+ <td> <li> <a href="/Algorithms/Searching%20algorithms/FibonacciSearch/FibonacciSearchAlgorithm.cs"> Fibonacci Search </a> </li>        </td>
+
+
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+  
+  <td> <li> <a href="/Algorithms/Sorting%20algorithms/InsertionSort/InsertionSortAlgorithm.cs"> Insertion Sort </a> </li>     </td>
+  <td> <li> <a href="/Algorithms/Sorting%20algorithms/SelectionSort/SelectionSortAlgorithm.cs"> Selection Sort </a> </li>     </td>
+  <td> <li> <a href="/Algorithms/Sorting%20algorithms/MergeSort/MergeSortAlgorithm.cs"> Merge Sort </a> </li>                 </td>
+  <td> <li> <a href="/Algorithms/Sorting%20algorithms/QuickSort/QuickSortAlgorithm.cs"> Quick Sort </a> </li>                 </td>
+  <td> <li> <a href="/Algorithms/Sorting%20algorithms/BubbleSort/BubbleSortAlgorithm.cs"> Bubble Sort </a> </li>              </td>
+  <td> <li> <a href="/Algorithms/Sorting%20algorithms/PancakeSort/PancakeSortAlgorithm.cs"> Pancake Sort </a> </li>           </td>
+  <td> <li> <a href="/Algorithms/Sorting%20algorithms/BucketSort/BucketSortAlgorithm.cs"> Bucket Sort </a> </li>              </td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+   
+  <td>     <li> <a href="/Algorithms/Custom%20Abstract%20data%20types%20algorithms/Graph/CustomGraph.cs"> Graph </a> </li>                 </td>
+  <td> <li> <a href="/Algorithms/Custom%20Abstract%20data%20types%20algorithms/Stack/CustomStack.cs"> Stack </a> </li>                     </td>
+  <td> <li> <a href="/Algorithms/Custom%20Abstract%20data%20types%20algorithms/Queue/CustomQueue.cs">Queue </a> </li>                      </td>
+  <td> <li> <a href="/Algorithms/Custom%20Abstract%20data%20types%20algorithms/ArrayList/CustomArrayList.cs"> ArrayList </a> </li>         </td>
+  <td> <li> <a href="/Algorithms/Custom%20Abstract%20data%20types%20algorithms/HashSet/CustomHashSet.cs"> HashSet </a> </li>               </td>
+  <td> <li> <a href="/Algorithms/Custom%20Abstract%20data%20types%20algorithms/LinkedList/CustomLinkedList.cs"> LinkedList </a> </li>      </td>
     </tr>
   </tbody>
 </table>
