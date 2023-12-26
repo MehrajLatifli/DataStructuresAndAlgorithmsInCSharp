@@ -1,4 +1,7 @@
-﻿
+﻿ <img src="https://github.com/MehrajLatifli/DataStructuresAndAlgorithmsInCSharp/blob/master/cover.jpg" alt="Data Structures & Algorithms"> 
+
+</br>
+</br>
 
 <h2> Searching 🔎 </h2>
 
@@ -32,9 +35,3 @@
 <p> ArrayList </p>
 <p> HashSet </p>
 <p> LinkedList </p>
-
-</br>
-</br>
-
- <img src="https://github.com/MehrajLatifli/DataStructuresAndAlgorithmsInCSharp/blob/master/cover.jpg" alt="Data Structures & Algorithms" width="360" height="270"> 
-
