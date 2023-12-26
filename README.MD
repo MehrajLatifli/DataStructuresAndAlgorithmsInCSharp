@@ -3,6 +3,7 @@
 
 <img src="/cover.jpg" alt="Data Structures & Algorithms"/> 
 
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,19 @@ using System.Threading.Tasks;
         public int Id { get; set; }
     }
 }
+
+
+```
+
+</br>
+</br>
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Data
 {
