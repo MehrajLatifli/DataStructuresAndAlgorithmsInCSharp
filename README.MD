@@ -1,4 +1,4 @@
-﻿ <img src="https://github.com/MehrajLatifli/DataStructuresAndAlgorithmsInCSharp/blob/master/cover.jpg" alt="Data Structures & Algorithms"> 
+﻿ <img src="https://github.com/MehrajLatifli/DataStructuresAndAlgorithmsInCSharp/blob/master/cover.jpg" alt="Data Structures & Algorithms" width="360" height="270"> 
 
 </br>
 </br>
