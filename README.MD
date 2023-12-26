@@ -1,4 +1,9 @@
-﻿<h2> Searching 🔎 </h2>
+﻿ <img src="https://github.com/MehrajLatifli/DataStructuresAndAlgorithmsInCSharp/blob/master/cover.jpg" alt="Data Structures & Algorithms"> 
+
+</br>
+</br>
+
+<h2> Searching 🔎 </h2>
 
 <p> Linear Search </p>
 <p> Binary Search </p>
