@@ -1,25 +1,6 @@
-﻿<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+﻿
 
-        img {
-            max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
-            height: auto; /* Maintain the image's aspect ratio */
-        }
-    </style>
-</head>
-<body>
-    </br>
+</br>
 </br>
 
 <img src="/cover.jpg" alt="Data Structures & Algorithms"/> 
@@ -65,6 +46,3 @@
  <li> <a href="/Algorithms/Custom%20Abstract%20data%20types%20algorithms/HashSet/CustomHashSet.cs"> HashSet </a> </li>
  <li> <a href="/Algorithms/Custom%20Abstract%20data%20types%20algorithms/LinkedList/CustomLinkedList.cs"> LinkedList </a> </li>
 </ul>
-</body>
-</html>
-
