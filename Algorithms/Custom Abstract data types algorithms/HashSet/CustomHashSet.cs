@@ -38,6 +38,7 @@ namespace HashSet
             return true;
         }
 
+
         public bool Remove(T item)
         {
             int index = Array.FindIndex(items, i => EqualityComparer<T>.Default.Equals(i, item));
@@ -60,16 +61,11 @@ namespace HashSet
         }
 
 
-
-
-
-
-
-
         public bool Contains(T item)
         {
             return Array.IndexOf(items, item, 0, count) >= 0;
         }
+
 
         public void Clear()
         {
@@ -86,6 +82,7 @@ namespace HashSet
             }
             Console.WriteLine();
         }
+
 
         private void ResizeArray()
         {
