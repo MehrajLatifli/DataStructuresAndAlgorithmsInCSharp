@@ -3,6 +3,8 @@
 
 <img src="/cover.jpg" alt="Data Structures & Algorithms"/> 
 
+</br>
+</br>
 
 ```csharp
 using System;
