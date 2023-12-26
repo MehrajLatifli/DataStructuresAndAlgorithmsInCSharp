@@ -7,7 +7,7 @@
 
 <ul style="list-style-type:circle">
 
- <li> <a "file:///DataStructuresAndAlgorithmsInCSharp/Algorithms/Searching%20algorithms/LinearSearch/LinearSearchAlgorithm.cs"> Linear Search </a> </li>
+ <li> <a "/DataStructuresAndAlgorithmsInCSharp/Algorithms/Searching%20algorithms/LinearSearch/LinearSearchAlgorithm.cs"> Linear Search </a> </li>
  <li> <a href="https://github.com/MehrajLatifli/DataStructuresAndAlgorithmsInCSharp/blob/master/Algorithms/Searching%20algorithms/BinarySearch/BinarySearchAlgorithm.cs"> Binary Search </a> </li>
  <li> <a href="https://github.com/MehrajLatifli/DataStructuresAndAlgorithmsInCSharp/blob/master/Algorithms/Searching%20algorithms/TernarySearch/TernarySearchAlgorithm.cs">Ternary Search </a> </li>
  <li> <a href="https://github.com/MehrajLatifli/DataStructuresAndAlgorithmsInCSharp/blob/master/Algorithms/Searching%20algorithms/JumpSearch/JumpSearchAlgorithm.cs"> Jump Search </a> </li>
