@@ -59,7 +59,7 @@ namespace DataStructuresAndAlgorithms
                     switch (choice)
                     {
                         case 1:
-                            items = await RandomDataFilling.GenerateItems(10,10001,10);
+                            items = await RandomDataFilling.GenerateItems(10, 10001, 10);
 
                             if (items.Count() > 0)
                             {
@@ -791,7 +791,7 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.WriteLine("\n");
                                             Console.WriteLine(" Depth First Search:");
-                                      
+
                                             Console.WriteLine("\n");
 
                                             itemGraph.DepthFirstSearchTraversal(sourceItem_1);
@@ -807,7 +807,7 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.WriteLine("\n");
 
-                                            Console.WriteLine( " Breadth First Search:");
+                                            Console.WriteLine(" Breadth First Search:");
 
                                             Console.WriteLine("\n");
 
@@ -1121,7 +1121,7 @@ namespace DataStructuresAndAlgorithms
                                                 Item removeItem = new Item { Id = itemId3, Name = itemName };
 
 
-                                                if(removeItem!=null)
+                                                if (removeItem != null)
                                                 {
                                                     customArrayList.Remove(removeItem);
                                                 }
@@ -1144,24 +1144,24 @@ namespace DataStructuresAndAlgorithms
 
                                         case 4:
 
-                                      
-                                                Console.Write(" Enter Index: ");
-                                                if (int.TryParse(Console.ReadLine(), out int index2))
-                                                {
-                                                  
-                                                    customArrayList.RemoveAt(index2);
-                                                }
 
-                                                else
-                                                {
-                                                    Console.Clear();
+                                            Console.Write(" Enter Index: ");
+                                            if (int.TryParse(Console.ReadLine(), out int index2))
+                                            {
 
-                                                    await Task.CompletedTask;
-                                                    Console.WriteLine(" Invalid input for Index. Please enter a valid integer.");
-                                                }
+                                                customArrayList.RemoveAt(index2);
+                                            }
+
+                                            else
+                                            {
+                                                Console.Clear();
 
                                                 await Task.CompletedTask;
-                                      
+                                                Console.WriteLine(" Invalid input for Index. Please enter a valid integer.");
+                                            }
+
+                                            await Task.CompletedTask;
+
                                             break;
 
                                         case 5:
@@ -1239,7 +1239,7 @@ namespace DataStructuresAndAlgorithms
                                                 Console.Write(" Enter Item Name: ");
                                                 string itemName = Console.ReadLine();
 
-                                             
+
 
                                                 Item newItem = new Item { Id = itemId, Name = itemName };
                                                 customHashSet.Add(newItem);
@@ -1316,9 +1316,9 @@ namespace DataStructuresAndAlgorithms
 
                                         case 4:
                                             Console.WriteLine("\n");
-                                            Console.WriteLine(" HashSet count: "+customHashSet.Count);
+                                            Console.WriteLine(" HashSet count: " + customHashSet.Count);
 
-                                             await Task.CompletedTask;
+                                            await Task.CompletedTask;
                                             break;
                                         case 5:
                                             Console.WriteLine("\n");
@@ -1353,8 +1353,8 @@ namespace DataStructuresAndAlgorithms
 
                                 Console.WriteLine("\n Press Enter to continue...");
                                 Console.ReadKey();
-                                
-                                
+
+
                                 Console.Clear();
 
 
@@ -1434,14 +1434,14 @@ namespace DataStructuresAndAlgorithms
 
 
                                         case 3:
-                                       
-                                                Console.WriteLine("\n");
-                                                customLinkedList.Sort();
-                                                Console.WriteLine("\n");
-                                                customLinkedList.DisplayList();
 
-                                                await Task.CompletedTask;
-                                     
+                                            Console.WriteLine("\n");
+                                            customLinkedList.Sort();
+                                            Console.WriteLine("\n");
+                                            customLinkedList.DisplayList();
+
+                                            await Task.CompletedTask;
+
                                             break;
 
                                         case 4:
@@ -1455,7 +1455,7 @@ namespace DataStructuresAndAlgorithms
 
 
                                                 Item searchItem = new Item { Id = s_itemId, Name = s_itemName };
-                                     
+
 
                                                 Console.WriteLine($"\n Search result: {customLinkedList.Search(searchItem)}");
 
@@ -1470,12 +1470,14 @@ namespace DataStructuresAndAlgorithms
                                                 Console.WriteLine(" Invalid input for Item Id. Please enter a valid integer.");
                                             }
                                             break;
+
                                         case 5:
                                             Console.WriteLine("\n");
                                             customLinkedList.DisplayList();
 
                                             await Task.CompletedTask;
                                             break;
+
                                         case 6:
                                             Console.WriteLine("\n");
                                             customLinkedList.Clear();
@@ -1517,7 +1519,7 @@ namespace DataStructuresAndAlgorithms
                             return;
 
                         default:
-                            Console.WriteLine(" Invalid choice. Please enter a valid option (1-3).");
+                            Console.WriteLine(" Invalid choice. Please enter a valid option.");
                             await Task.CompletedTask;
                             break;
                     }
