@@ -667,12 +667,12 @@ namespace DataStructuresAndAlgorithms
                                         case 2:
                                             Console.Write(" Enter Source Item Id: ");
 
-                                            // Validate if the input is a valid integer
+                                      
                                             if (int.TryParse(Console.ReadLine(), out int sourceId))
                                             {
                                                 Console.Write(" Enter Destination Item Id: ");
 
-                                                // Validate if the input is a valid integer
+                                     
                                                 if (int.TryParse(Console.ReadLine(), out int destinationId))
                                                 {
                                                     Item sourceItem = itemGraph.GetVertices().Find(item => item.Id == sourceId);
@@ -682,6 +682,7 @@ namespace DataStructuresAndAlgorithms
                                                     {
                                                         itemGraph.AddEdge(sourceItem, destinationItem);
                                                         Console.WriteLine($" Edge added between {sourceItem.Name} and {destinationItem.Name}.");
+                                                        await Task.CompletedTask;
                                                     }
                                                     else
                                                     {
@@ -704,7 +705,6 @@ namespace DataStructuresAndAlgorithms
                                                 Console.WriteLine(" Invalid input for Source Item Id. Please enter a valid integer.");
                                             }
 
-                                            await Task.CompletedTask;
                                             break;
 
                                         case 3:
@@ -718,10 +718,12 @@ namespace DataStructuresAndAlgorithms
                                                 if (removeItem != null)
                                                 {
                                                     itemGraph.RemoveVertex(removeItem);
+                                                    await Task.CompletedTask;
                                                     Console.WriteLine($" Vertex with ID {removeItem.Id} removed.");
                                                 }
                                                 else
                                                 {
+                                                    await Task.CompletedTask;
                                                     Console.WriteLine(" Invalid Item Id.");
                                                 }
                                             }
@@ -733,18 +735,16 @@ namespace DataStructuresAndAlgorithms
                                                 Console.WriteLine(" Invalid input for Item Id. Please enter a valid integer.");
                                             }
 
-                                            await Task.CompletedTask;
                                             break;
 
                                         case 4:
                                             Console.Write(" Enter Source Item Id: ");
 
-                                            // Validate if the input is a valid integer
+                                           
                                             if (int.TryParse(Console.ReadLine(), out int removeSourceId))
                                             {
                                                 Console.Write(" Enter Destination Item Id: ");
 
-                                                // Validate if the input is a valid integer
                                                 if (int.TryParse(Console.ReadLine(), out int removeDestinationId))
                                                 {
                                                     Data.Item removeSourceItem = itemGraph.GetVertices().Find(item => item.Id == removeSourceId);
@@ -753,10 +753,13 @@ namespace DataStructuresAndAlgorithms
                                                     if (removeSourceItem != null && removeDestinationItem != null)
                                                     {
                                                         itemGraph.RemoveEdge(removeSourceItem, removeDestinationItem);
+                                                        await Task.CompletedTask;
                                                         Console.WriteLine($" Edge removed between {removeSourceItem.Name} and {removeDestinationItem.Name}.");
                                                     }
                                                     else
                                                     {
+
+                                                        await Task.CompletedTask;
                                                         Console.WriteLine(" Invalid Item Id(s).");
                                                     }
                                                 }
@@ -776,7 +779,6 @@ namespace DataStructuresAndAlgorithms
                                                 Console.WriteLine(" Invalid input for Source Item Id. Please enter a valid integer.");
                                             }
 
-                                            await Task.CompletedTask;
                                             break;
 
                                         case 5:
@@ -796,28 +798,94 @@ namespace DataStructuresAndAlgorithms
 
                                             Console.WriteLine("\n");
 
-                                            itemGraph.DepthFirstSearchTraversal(newItem);
+                                            Console.Write(" Enter Item Id: ");
+
+                                            // Validate if the input is a valid integer
+                                            if (int.TryParse(Console.ReadLine(), out int DFS_Id))
+                                            {
+                                                Item sourceItemDFS = itemGraph.GetVertices().Find(item => item.Id == DFS_Id);
+
+
+                                                if (sourceItemDFS != null)
+                                                {
+                                                    itemGraph.DepthFirstSearchTraversal(sourceItemDFS);
+
+                                                    await Task.CompletedTask;
+
+                                                    await Task.CompletedTask;
+                                                }
+                                                else
+                                                {
+                                                    Console.Clear();
+
+                                                    await Task.CompletedTask;
+                                                    Console.WriteLine(" Item Id not fount");
+                                                }
+
+
+
+                                    
+
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+
+                                                await Task.CompletedTask;
+                                                Console.WriteLine(" Invalid input for Destination Item Id. Please enter a valid integer.");
+                                            }
 
                                             Console.WriteLine("\n");
 
-                                            await Task.CompletedTask;
                                             break;
 
                                         case 7:
                                             Console.WriteLine("\n");
+
+
                                             itemGraph.PrintGraph();
 
                                             Console.WriteLine("\n");
-
-                                            Console.WriteLine(" Breadth First Search:");
-
-                                            Console.WriteLine("\n");
-
-                                            itemGraph.BreadthFirstSearchTraversal(newItem);
+                                            Console.WriteLine(" Depth First Search:");
 
                                             Console.WriteLine("\n");
 
-                                            await Task.CompletedTask;
+                                            Console.Write(" Enter Item Id: ");
+
+                                            // Validate if the input is a valid integer
+                                            if (int.TryParse(Console.ReadLine(), out int BFS_Id))
+                                            {
+
+                                                Item sourceItemBFS = itemGraph.GetVertices().Find(item => item.Id == BFS_Id);
+                                                if (sourceItemBFS !=null)
+                                                {
+
+                                                    itemGraph.BreadthFirstSearchTraversal(sourceItemBFS);
+
+                                                    await Task.CompletedTask;
+                                                }
+                                                else
+                                                {
+                                                    Console.Clear();
+
+                                                    await Task.CompletedTask;
+                                                    Console.WriteLine(" Item Id not fount");
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                Console.Clear();
+
+                                                await Task.CompletedTask;
+                                                Console.WriteLine(" Invalid input for Destination Item Id. Please enter a valid integer.");
+                                            }
+
+
+
+
+                                            Console.WriteLine("\n");
+
                                             break;
 
                                         case 8:
