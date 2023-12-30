@@ -26,6 +26,7 @@ namespace DataStructuresAndAlgorithms
 
         static async Task Menu(List<Item> items, CustomGraph<Item> itemGraph, CustomStack<Item> customStack, CustomQueue<Item> customQueue, CustomArrayList<Item> customArrayList, CustomHashSet<Item> customHashSet, CustomLinkedList<Item> customLinkedList)
         {
+
             while (true)
             {
                 Console.Clear();
